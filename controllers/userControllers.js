@@ -1,6 +1,6 @@
 //Route handlers
-const showHomePage = async (req, res) => {
-    res.render('home');
+const showSignPage = async (req, res) => {
+    res.render('sign');
 }
 
 const show404 = (req, res) => {
@@ -8,5 +8,5 @@ const show404 = (req, res) => {
 }
 
 module.exports = {
-    showHomePage, show404,
+    showSignPage, show404,
 };

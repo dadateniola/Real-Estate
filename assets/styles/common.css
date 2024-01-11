@@ -1,5 +1,8 @@
 /* Import fonts */
 
+/* Manrope font */
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
 
 /* Clear default margins and paddings */
 * {
@@ -13,6 +16,19 @@
 :root {
     --light: 255, 255, 255;
     --dark: 0, 0, 0;
+
+    --night: #0C090D;
+    --seasalt: #F4F7F5;
+    --anaranth-purple: #A5243D;
+    --sub-text: rgba(var(--dark), 0.2);
+
+    --sign-padding: 18px;
+
+    --manrope: 'Manrope', sans-serif;
+}
+
+body {
+    font-family: var(--manrope);
 }
 
 
@@ -24,3 +40,53 @@
 */
 
 
+/* Common styles */
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex.center {
+    align-items: center;
+    justify-content: center;
+}
+
+.img-here {
+    overflow: hidden;
+}
+
+.img-here img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.rel {
+    position: relative;
+}
+
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+input {
+    display: block;
+    width: 100%;
+    background-color: var(--seasalt);
+    padding: 20px;
+    border-radius: 40px;
+    border: 2px solid var(--sub-text);
+}
+
+input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+    font-family: var(--manrope);
+    font-weight: 600;
+    font-size: 1.1em;
+}

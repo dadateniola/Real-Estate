@@ -1,0 +1,73 @@
+main {
+    width: 100%;
+    height: 100vh;
+    padding: var(--sign-padding);
+    background-color: var(--seasalt);
+}
+
+.form-cont {
+    gap: 3vw;
+}
+
+.form-box {
+    width: 50%;
+    flex-grow: 1;
+}
+
+.form {
+    flex-direction: column;
+    gap: 35px;
+}
+
+.form h1 {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 500;
+}
+
+.form-img {
+    width: 45%;
+    border-radius: 50px;
+}
+
+.form-actions {
+    gap: 20px;
+}
+
+.form-actions a {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    background-color: rgb(var(--dark));
+    color: rgb(var(--light));
+    text-transform: capitalize;
+    border-radius: 40px;
+}
+
+.form-actions a:first-child {
+    background-color: rgb(var(--dark), 0.1);
+    color: rgb(var(--dark));
+    width: 30%;
+}
+
+.form-actions a:last-child {
+    flex-grow: 1;
+}
+
+.quote {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 6px;
+    align-items: center;
+}
+
+.quote p {
+    font-size: 0.7em;
+    font-weight: 500;
+}
+
+.quote i {
+    font-size: 4px;
+}
