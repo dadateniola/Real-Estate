@@ -13,31 +13,51 @@
 
 <body>
 
+    <loader></loader>
     <main>
         <div class="form-cont container flex">
-            <div class="form-box flex center rel">
+            <div class="form-box flex center rel" data-form="signin">
                 <div class="form flex">
-                    <h1>Unlocking the <br> doors to your dream home</h1>
-                    <input type="text" name="email" id="email" placeholder="Enter your email">
-                    <input type="text" name="pass" id="pass" placeholder="Enter your password">
-                    <div class="form-actions flex">
-                        <a href="/">
-                            sign up
-                        </a>
-                        <a href="/">login</a>
+                    <div>
+                        <div class="slide-in">
+                            <h1>Unlocking the</h1>
+                        </div>
+                        <div class="slide-in">
+                            <h1>doors to your dream home</h1>
+                        </div>
+                    </div>
+                    <div class="slide-in">
+                        <input type="text" name="email" id="email" placeholder="Enter your email">
+                    </div>
+                    <div class="slide-in">
+                        <input type="text" name="pass" id="pass" placeholder="Enter your password">
+                    </div>
+                    <div class="form-actions flex slide-in">
+                        <button class="arrow" href="/">
+                            <div class="sign-arrow flex center">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </div>
+                            <div class="sign-text">
+                                sign up
+                            </div>
+                        </button>
+                        <a class="wide" href="/">sign in</a>
                     </div>
                 </div>
-                <div class="quote flex">
+                <div class="quote flex ">
                     <i class="fa-solid fa-circle"></i>
                     <p>Every home tells a story: yours begins here.</p>
                     <i class="fa-solid fa-circle"></i>
                 </div>
             </div>
-            <div class="form-img img-here">
-                <img src="/images/sign/signin.jpg" alt="">
+            <div class="form-img overflow-h">
+                <img src="/images/sign/test (1).jpg" alt="image" class="in-view">
             </div>
         </div>
     </main>
+
+    <%- include('partials/foot') %>
+    <script src="/scripts/sign.js"></script>
 
 </body>
 

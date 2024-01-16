@@ -9,6 +9,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: var(--manrope);
 }
 
 
@@ -20,27 +21,49 @@
     --night: #0C090D;
     --seasalt: #F4F7F5;
     --anaranth-purple: #A5243D;
+    --platinum: #e9e9e9;
     --sub-text: rgba(var(--dark), 0.2);
 
     --sign-padding: 18px;
+    --font-size: 1em;
 
     --manrope: 'Manrope', sans-serif;
 }
 
+html,
 body {
-    font-family: var(--manrope);
+    background-color: var(--seasalt);
 }
 
 
 /*
     Z-INDEX RANKINGS: 
     ----------------------------
-    
+    loader: 100
+    .pagination: 10;
     ----------------------------
 */
 
 
 /* Common styles */
+a, p {
+    font-size: var(--font-size);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.overflow-h {
+    overflow: hidden;
+}
+
 .container {
     width: 100%;
     height: 100%;
@@ -55,6 +78,14 @@ body {
     justify-content: center;
 }
 
+.flex.grow {
+    flex-grow: 1;
+}
+
+img {
+    object-fit: cover;
+}
+
 .img-here {
     overflow: hidden;
 }
@@ -62,7 +93,6 @@ body {
 .img-here img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
 .rel {
@@ -79,7 +109,7 @@ input {
     display: block;
     width: 100%;
     background-color: var(--seasalt);
-    padding: 20px;
+    padding: 20px 25px;
     border-radius: 40px;
     border: 2px solid var(--sub-text);
 }
@@ -88,5 +118,56 @@ input::placeholder {
     color: rgba(0, 0, 0, 0.5);
     font-family: var(--manrope);
     font-weight: 600;
-    font-size: 1.1em;
+}
+
+loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--seasalt);
+    z-index: 100;
+}
+
+.pagination {
+    --wh: 10px;
+
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 10;
+}
+
+.pagination-dot {
+    --wh: 7px;
+
+    width: var(--wh);
+    height: var(--wh);
+    border-radius: 5px;
+    background-color: rgba(var(--light), 0.2);
+    transition: .5s ease-in-out;
+}
+
+.pagination-dot.active {
+    --wh: 50px;
+
+    height: 10px;
+    background-color: var(--anaranth-purple);
+}
+
+.pagination-dot.next {
+    --wh: 9px;
+
+    background-color: rgba(var(--light), 0.8);
+}
+
+.pagination-dot.later {
+    --wh:  8px;
+
+    background-color: rgba(var(--light), 0.5);
 }

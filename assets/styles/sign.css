@@ -21,37 +21,70 @@ main {
 
 .form h1 {
     text-align: center;
-    font-size: 2.5em;
+    font-size: calc(var(--font-size) + 1.3em);
     font-weight: 500;
 }
 
 .form-img {
+    position: relative;
     width: 45%;
     border-radius: 50px;
+    background-color: var(--platinum);
+}
+
+.form-img img {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 135%;
+    height: 100%;
+    transform: translateY(-50%);
 }
 
 .form-actions {
     gap: 20px;
 }
 
-.form-actions a {
-    display: block;
-    text-align: center;
-    padding: 15px;
+.form-actions > * {
+    --height: 60px;
+    --padding: 5px;
+    --gap: 15px;
+    --wh: calc(var(--height) - (var(--padding) * 2));
+
+    height: var(--height);
+    padding: var(--padding);
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
     background-color: rgb(var(--dark));
     color: rgb(var(--light));
     text-transform: capitalize;
     border-radius: 40px;
+    font-weight: 600;
 }
 
-.form-actions a:first-child {
+.form-actions button.arrow {
     background-color: rgb(var(--dark), 0.1);
     color: rgb(var(--dark));
-    width: 30%;
 }
 
-.form-actions a:last-child {
+.form-actions .sign-arrow {
+    height: var(--wh);
+    width: var(--wh);
+    background-color: rgb(var(--dark));
+    color: rgb(var(--light));
+    border-radius: 100%;
+    transform: rotate(-45deg);
+    font-size: 1.2em;
+}
+
+.form-actions .sign-text {
+    margin-right: var(--gap);
+}
+
+.form-actions a.wide {
     flex-grow: 1;
+    justify-content: center;
 }
 
 .quote {
@@ -64,10 +97,61 @@ main {
 }
 
 .quote p {
-    font-size: 0.7em;
+    font-size: 0.8em;
     font-weight: 500;
+    white-space: nowrap;
 }
 
 .quote i {
     font-size: 4px;
+}
+
+
+
+
+@media (max-width: 1200px) {
+    :root {
+        --font-size: 0.8em;
+    }
+}
+
+@media (max-width: 1000px) {
+    .form-img {
+        display: none;
+    }
+
+    .form h1 {
+        font-size: calc(var(--font-size) + 1em);
+    }
+
+    .form-actions a {
+        --gap: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    :root {
+        --sign-padding: 10px;
+    }
+
+    .form {
+        gap: 30px;
+    }
+
+    .form-actions {
+        gap: 10px;
+    }
+
+    .form-actions a {
+        --height: 55px;
+        --gap: 8px;
+    }
+
+    .form h1 {
+        font-size: 7.3vw;
+    }
+
+    .quote p {
+        font-size: 0.6em;
+    }
 }
