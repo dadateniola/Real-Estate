@@ -73,7 +73,7 @@ class Methods {
                     element.removeAttribute('disabled');
 
                     if (element.tagName === 'A') {
-                        element.setAttribute('href', element.dataset.href);
+                        if(element.dataset?.href) element.setAttribute('href', element.dataset.href);
                         element.removeEventListener('click', Methods.preventDefault);
                     }
                 });
@@ -119,7 +119,7 @@ class Methods {
             .to(image, { xPercent: -25, duration: 6.5, ease: "none" }, "<")
             .call(() => {
                 outImage?.remove();
-                const methods = new Methods({ holder: select(".form-img"), max: max + 1 });
+                const methods = new Methods({ holder, max: max + 1 });
                 methods.startSlider();
             }, null, "-=0.5")
 

@@ -34,7 +34,7 @@ class Animations {
                                 sign in
                             </div>
                         </button>
-                        <a class="wide" href="/">sign up</a>
+                        <a class="wide" href="/home">sign up</a>
                     </div>
                 `,
                 quote: "Home awaits. Start your journey now."
@@ -64,7 +64,7 @@ class Animations {
                             sign up
                         </div>
                     </button>
-                        <a class="wide" href="/">sign in</a>
+                        <a class="wide" href="/home">sign in</a>
                     </div>
                 `,
                 quote: "Every home tells a story: yours begins here."
@@ -158,7 +158,7 @@ class PageSetup {
             .set(".slide-in > *", { yPercent: 100, opacity: 0 })
             .set(".quote", { opacity: 0 })
             
-            .to("loader", { display: "none", delay: 1 })
+            .to("loader", { display: "none" })
             .to(".slide-in > *", { yPercent: 0, opacity: 1, stagger: 0.1, ease: "Back.easeOut" })
             .to(".form-img", { opacity: 1 }, "<")
             .to(".quote", { opacity: 1 }, "<")

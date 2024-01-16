@@ -39,7 +39,8 @@ body {
 /*
     Z-INDEX RANKINGS: 
     ----------------------------
-    loader: 100
+    loader: 100;
+    .navbar: 50;
     .pagination: 10;
     ----------------------------
 */
@@ -120,6 +121,7 @@ input::placeholder {
     font-weight: 600;
 }
 
+
 loader {
     position: fixed;
     top: 0;
@@ -129,6 +131,7 @@ loader {
     background-color: var(--seasalt);
     z-index: 100;
 }
+
 
 .pagination {
     --wh: 10px;
@@ -170,4 +173,88 @@ loader {
     --wh:  8px;
 
     background-color: rgba(var(--light), 0.5);
+}
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--sign-padding) calc(var(--sign-padding) * 2);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 50;
+}
+
+.navbar-img {
+    --wh: 40px;
+
+    width: var(--wh);
+    height: var(--wh);
+}
+
+.navbar-flex {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.navbar-links {
+    gap: 4vw;
+}
+
+.navbar-links a {
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+.navbar-links a.active,
+.navbar-links a:hover {
+    color: var(--anaranth-purple);
+}
+
+.bell {
+    --wh: 45px;
+
+    border-radius: 100%;
+    background-color: rgba(var(--dark), 0.05);
+    transition: 0.3s;
+}
+
+.bell i {
+    font-size: 1.4em;
+    transition: 0.3s;
+}
+
+.bell:hover {
+    background-color: rgba(var(--dark), 1);
+}
+
+.bell:hover i {
+    color: white;
+}
+
+.pfp {
+    border-radius: 100%;
+    overflow: visible;
+}
+
+.pfp img {
+    border-radius: 100%;
+}
+
+.pfp::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 110%;
+    height: 110%;
+    transform: translate(-50%, -50%);
+    border: 2px solid var(--anaranth-purple);
+    border-radius: 100%;
 }
